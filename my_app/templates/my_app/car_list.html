@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+
+{% block  content %}
+<h1>List All CarsView</h1>
+
+{% if object_list  %}
+<ul>
+    {% for car  in object_list  %}
+
+        <p> The Car brand is {{car.brand}} and make is {{car.year}} {{car.id}} <a href="car_detail/{{car.id}}">More</a><a href="car_update/{{car.id}}">update</a> <a href="car_delete/{{car.id}}">remove</a>  </p>
+
+    {% endfor %}
+
+
+</ul>
+
+{% else %}
+
+    <p>No record found </p>
+{% endif %}
+ 
+
+    {% endblock  %}

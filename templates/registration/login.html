@@ -1,0 +1,36 @@
+{% if  form.errors %}
+<p>Something went wrong</p>
+
+
+{% endif %}
+
+
+{% if next %}
+
+{% if user.authenticated %}
+
+<p>You dont have permission for this page </p>
+
+
+{% else %}
+
+<p>Please Login again </p>
+{% endif %}
+
+
+{% endif %}
+
+<div class="container mt-5 myform">
+
+    <form  method="post" action="{%  url 'login' %}" >
+        {% csrf_token %}
+{{form.username.label_tag}}
+{{form.username}}
+
+{{form.password.label_tag}}
+{{form.password}}
+<button type="submit" class="btn btn-primary">Submit</button>
+<input type="hidden" name="next"  value={{next}}>
+</form>
+
+

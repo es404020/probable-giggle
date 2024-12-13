@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+
+{% block  content %}
+
+
+<h1>EXAMPLE HTML</h1>
+
+<h4>{{first_name| upper}}</h4>
+<h4>{{last_name}}</h4>
+
+{% if last_name == 'Ajani'  %}
+        {{first_name}}
+
+{% else  %} 
+        {{first_name}}
+
+{% endif  %}
+
+<ul>
+{% for x in some_list %}
+
+<h3>{{x}}</h3>
+
+{% endfor %}
+
+
+</ul>
+
+<a href="{% url 'my_app:variable' %}">click to navigate</a>
+
+{% endblock  %}

@@ -1,0 +1,45 @@
+
+
+
+{% extends "base.html" %}
+
+
+{% block  content %}
+<h1>About Book</h1>
+
+<p>Total Books: {{num_books}}</p>
+<p>Num Available: {{num_instance_avail}}</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+        
+            {% comment %} <th>more</th>
+            <th>remove</th> {% endcomment %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books  %}
+        <tr>
+        
+
+
+
+<td>{{book}}</td>
+
+{% comment %} <td> <a href="book_detail/{{book.id}}">More</a></td>
+<td> <a href="book_delete/{{book.id}}">remove</a></td> {% endcomment %}
+
+        
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+ 
+
+    {% endblock  %}

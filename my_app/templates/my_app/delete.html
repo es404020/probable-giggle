@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+
+{% block  content %}
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Remove Brand</h1>
+    <form action="" method="post" class="shadow p-4 rounded bg-light">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="brand" class="form-label">PK Number:</label>
+            <input type="text" id="pk" name="pk" class="form-control" required>
+        </div>
+   
+        <button type="submit" class="btn btn-danger">Remove</button>
+    </form>
+</div>
+
+
+ 
+
+    {% endblock  %}
